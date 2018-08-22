@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+      .content{
+          display: none;
+      }
+      body {
+          font-family:"Lucida Grande","Droid Sans",Arial,Helvetica,sans-serif;
+      }
+      .legend {
+          border: 1px solid #555555;
+          border-radius: 5px 5px 5px 5px;
+          font-size: 0.8em;
+          margin: 10px;
+          padding: 8px;
+      }
+      .bld {
+          font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body style="text-align:center" onload="bodyOnLoad();">
+        <div style="text-align:center">
+        <h1><b>CSE 587 Lab - 2 (NyTimes)</b></h1>
+        <h2><b>Data Visualization</b></h2>
+        <select style="margin-bottom:15px" name="Dropdown" onchange="js_call(this.value)">
+                <option value="NY_Immigration">Immigration</option>
+                <option value="NY_Visa">Visa</option>
+                <option value="NY_Daca">Daca</option>
+                <option value="NY_Immigration_Pair">Immigration Co-occurrence</option>
+                <option value="NY_Visa_Pair">Visa Co-occurrence</option>
+                <option value="NY_Daca_Pair">Daca Co-occurrence</option>
+        </select>
+        <br/>
+        </div>
+        <div class = "preload">
+                <img src="loading-spinner.gif" height="42" width="42"/>
+        </div>
+
+  <script>
+    function gif(){
+        $(".preload").fadeOut(4000, function(){
+        $(".content").fadeIn(1000);
+    });
+    }
+    $(function(){
+      gif();
+    });
+  </script>
+
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="d3.layout.cloud.js"></script>
+  <script src="script_ny.js"></script>
+  </body>
+
+</html>
